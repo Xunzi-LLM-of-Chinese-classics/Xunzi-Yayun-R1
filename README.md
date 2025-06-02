@@ -6,9 +6,9 @@
 
 <div align="center">
 
-[![ModelScope](https://img.shields.io/badge/ModelScope-07ced1?style=flat&logo=modelscope&logoColor=white)](https://modelscope.cn/models/njauzwh/QPM-1K-32B-R1/summary)
-[![GitHub Stars](https://img.shields.io/github/stars/ricardozhy/QPM-1K-32B-R1?style=social)](https://github.com/ricardozhy/QPM-1K-32B-R1)
-[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-QPM--1K--32B--R1-yellow)](https://huggingface.co/ricardozhy/QPM-1K-32B-R1)
+[![ModelScope](https://img.shields.io/badge/ModelScope-07ced1?style=flat&logo=modelscope&logoColor=white)](https://modelscope.cn/models/njauzwh/Yayun-R1/summary)
+[![GitHub Stars](https://img.shields.io/github/stars/Xunzi-LLM-of-Chinese-classics/Yayun-R1?style=social)](https://github.com/Xunzi-LLM-of-Chinese-classics/Yayun-R1)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Yayun--R1-yellow)](https://huggingface.co/ricardozhy/Yayun-R1)
 ![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen)
 
 </div>
