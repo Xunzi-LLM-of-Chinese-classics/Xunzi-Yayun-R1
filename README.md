@@ -2,22 +2,22 @@
   <img src="https://github.com/ricardozhy/QPM-1K-32B-R1/blob/main/%E5%94%90%E8%AF%97logo.png?raw=true" width="20%" />
 </div>
 
-# Yayun-R1
+# Xunzi-Yayun-R1
 
 <div align="center">
 
-[![ModelScope](https://img.shields.io/badge/ModelScope-07ced1?style=flat&logo=modelscope&logoColor=white)](https://modelscope.cn/models/njauzwh/Yayun-R1/summary)
-[![GitHub Stars](https://img.shields.io/github/stars/Xunzi-LLM-of-Chinese-classics/Yayun-R1?style=social)](https://github.com/Xunzi-LLM-of-Chinese-classics/Yayun-R1)
-[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Yayun--R1-yellow)](https://huggingface.co/ricardozhy/Yayun-R1)
+[![ModelScope](https://img.shields.io/badge/ModelScope-07ced1?style=flat&logo=modelscope&logoColor=white)](https://modelscope.cn/models/njauzwh/Xunzi-Yayun-R1/summary)
+[![GitHub Stars](https://img.shields.io/github/stars/Xunzi-LLM-of-Chinese-classics/Xunzi-Yayun-R1?style=social)](https://github.com/Xunzi-LLM-of-Chinese-classics/Xunzi-Yayun-R1)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Yayun--R1-yellow)](https://huggingface.co/ricardozhy/Xunzi-Yayun-R1)
 ![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen)
 
 </div>
 
 ## 简介
 
-Yayun-R1 是一个基于GRPO强化学习的小样本唐诗生成推理模型。该模型致力于解决传统唐诗生成面临的两大核心挑战：一方面，避免对超大规模参数量模型的依赖，降低算力消耗；另一方面，克服“形神割裂”现象，使生成的诗歌既符合格律要求，又具备较高的艺术表现力。
+Xunzi-Yayun-R1 是一个基于GRPO强化学习的小样本唐诗生成推理模型。该模型致力于解决传统唐诗生成面临的两大核心挑战：一方面，避免对超大规模参数量模型的依赖，降低算力消耗；另一方面，克服“形神割裂”现象，使生成的诗歌既符合格律要求，又具备较高的艺术表现力。
 
-Yayun-R1 通过“规则编码-知识蒸馏-动态强化-检索增强”的方法论体系，在仅有32B参数规模的情况下，成功实现了优于DeepSeek-R1-671B等超大模型的唐诗生成能力。
+Xunzi-Yayun-R1 通过“规则编码-知识蒸馏-动态强化-检索增强”的方法论体系，在仅有32B参数规模的情况下，成功实现了优于DeepSeek-R1-671B等超大模型的唐诗生成能力。
 
 ## 主要特点
 
@@ -34,7 +34,7 @@ Yayun-R1 通过“规则编码-知识蒸馏-动态强化-检索增强”的方�
 ```python
 from modelscope import AutoModelForCausalLM, AutoTokenizer
 
-model_id = "njauzwh/Yayun-R1"
+model_id = "njauzwh/Xunzi-Yayun-R1"
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto", trust_remote_code=True)
 ```
@@ -44,7 +44,7 @@ model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto", trust_
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_id = "ricardozhy/Yayun-R1"
+model_id = "ricardozhy/Xunzi-Yayun-R1"
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto", trust_remote_code=True)
 ```
@@ -67,7 +67,7 @@ print(response)
 
 ### 格律要求说明
 
-Yayun-R1 支持以下格律要求的诗歌创作：
+Xunzi-Yayun-R1 支持以下格律要求的诗歌创作：
 
 - **诗体**：绝句、律诗
 - **字数**：五言、七言
@@ -77,7 +77,7 @@ Yayun-R1 支持以下格律要求的诗歌创作：
 
 ## 技术细节
 
-Yayun-R1 基于以下技术创新：
+Xunzi-Yayun-R1 基于以下技术创新：
 
 1. **GRPO强化学习**：使用Group Relative Policy Optimization对模型进行训练，将离散的诗歌格律转化为可微调奖励信号
 
@@ -95,12 +95,12 @@ Yayun-R1 基于以下技术创新：
 
 | 模型类型 | 是否冷启动 | 模型名称 | 平仄(tones) | 押韵(rhymes) | 对仗(antithesis) | 字数(length) | 总分(total) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 推理模型+RAG | 冷启动 | **Yayun-R1-32B** | 75.63 | **91.23** | 94.20 | 98.76 | **86.34** |
+| 推理模型+RAG | 冷启动 | **Xunzi-Yayun-R1-32B** | 75.63 | **91.23** | 94.20 | 98.76 | **86.34** |
 | 推理模型+RAG | 冷启动 | Qwen2.5-32B-Instruct-RAG | 76.81 | 87.86 | 94.69 | 99.77 | 86.00 |
 | 推理模型+RAG | 未冷启动 | Qwen2.5-32B-Instruct-GRPO-RAG | 80.89 | 83.26 | 93.88 | 97.55 | 85.86 |
 | 推理模型 | / | DeepSeek-R1-671B | 79.94 | 80.92 | 94.67 | 99.59 | 85.15 |
 | 数据集 | / | 唐诗三百首 | 72.99 | 87.20 | 93.72 | 98.13 | 83.91 |
-| 推理模型 | 冷启动 | Yayun-R1-32B | 77.74 | 77.36 | 94.85 | 99.80 | 83.25 |
+| 推理模型 | 冷启动 | Xunzi-Yayun-R1-32B | 77.74 | 77.36 | 94.85 | 99.80 | 83.25 |
 | 数据集 | / | 全唐诗 | 71.57 | 85.96 | 93.18 | 97.62 | 82.81 |
 | 推理模型 | 未冷启动 | Qwen2.5-32B-Instruct-GRPO | 79.74 | 72.38 | 94.38 | 99.22 | 82.41 |
 | 推理模型+RAG | 冷启动 | Qwen2.5-14B-Instruct-RAG | 72.28 | 87.54 | 90.63 | 91.47 | 82.44 |
@@ -128,5 +128,5 @@ Yayun-R1 基于以下技术创新：
 
 如有任何问题，请通过以下方式联系我们：
 
-- GitHub Issues: [提交问题](https://github.com/Xunzi-LLM-of-Chinese-classics/Yayun-R1/issues)
+- GitHub Issues: [提交问题](https://github.com/Xunzi-LLM-of-Chinese-classics/Xunzi-Yayun-R1/issues)
 - 邮箱：zhaowenhua@njau.edu.cn
