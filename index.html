@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yayun-R1 - 唐诗生成模型</title>
+    <title>Xunzi-Yayun-R1 - 唐诗生成模型</title>
     <style>
         * {
             margin: 0;
@@ -331,19 +331,19 @@
     <div class="container">
         <div class="header">
             <img src="https://github.com/ricardozhy/QPM-1K-32B-R1/blob/main/%E5%94%90%E8%AF%97logo.png?raw=true" alt="唐诗 Logo" class="logo">
-            <h1>Yayun-R1</h1>
+            <h1>Xunzi-Yayun-R1</h1>
             <div class="badges">
-                <a href="https://modelscope.cn/models/njauzwh/Yayun-R1/summary" class="badge modelscope">ModelScope</a>
-                <a href="https://github.com/Xunzi-LLM-of-Chinese-classics/Yayun-R1" class="badge github">GitHub Stars</a>
-                <a href="https://huggingface.co/ricardozhy/Yayun-R1" class="badge huggingface">🤗 Hugging Face</a>
+                <a href="https://modelscope.cn/models/njauzwh/Xunzi-Yayun-R1/summary" class="badge modelscope">ModelScope</a>
+                <a href="https://github.com/Xunzi-LLM-of-Chinese-classics/Xunzi-Yayun-R1" class="badge github">GitHub Stars</a>
+                <a href="https://huggingface.co/ricardozhy/Xunzi-Yayun-R1" class="badge huggingface">🤗 Hugging Face</a>
                 <span class="badge license">Apache 2.0</span>
             </div>
         </div>
 
         <section class="intro">
             <h2>简介</h2>
-            <p>Yayun-R1 是一个基于GRPO强化学习的小样本唐诗生成推理模型。该模型致力于解决传统唐诗生成面临的两大核心挑战：一方面，避免对超大规模参数量模型的依赖，降低算力消耗；另一方面，克服"形神割裂"现象，使生成的诗歌既符合格律要求，又具备较高的艺术表现力。</p>
-            <p>Yayun-R1 通过"规则编码-知识蒸馏-动态强化-检索增强"的方法论体系，在仅有32B参数规模的情况下，成功实现了优于DeepSeek-R1-671B等超大模型的唐诗生成能力。</p>
+            <p>Xunzi-Yayun-R1 是一个基于GRPO强化学习的小样本唐诗生成推理模型。该模型致力于解决传统唐诗生成面临的两大核心挑战：一方面，避免对超大规模参数量模型的依赖，降低算力消耗；另一方面，克服"形神割裂"现象，使生成的诗歌既符合格律要求，又具备较高的艺术表现力。</p>
+            <p>Xunzi-Yayun-R1 通过"规则编码-知识蒸馏-动态强化-检索增强"的方法论体系，在仅有32B参数规模的情况下，成功实现了优于DeepSeek-R1-671B等超大模型的唐诗生成能力。</p>
         </section>
 
         <section>
@@ -376,13 +376,13 @@
             <h2>使用方法</h2>
             <h3>模型加载</h3>
             <pre><code>from modelscope import AutoModelForCausalLM, AutoTokenizer
-model_id = "njauzwh/Yayun-R1"
+model_id = "njauzwh/Xunzi-Yayun-R1"
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto", trust_remote_code=True)</code></pre>
             
             <p>您也可以从Hugging Face加载模型：</p>
             <pre><code>from transformers import AutoModelForCausalLM, AutoTokenizer
-model_id = "ricardozhy/Yayun-R1"
+model_id = "ricardozhy/Xunzi-Yayun-R1"
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto", trust_remote_code=True)</code></pre>
 
@@ -397,7 +397,7 @@ response = model.chat(tokenizer, messages)
 print(response)</code></pre>
 
             <h3>格律要求说明</h3>
-            <p>Yayun-R1 支持以下格律要求的诗歌创作：</p>
+            <p>Xunzi-Yayun-R1 支持以下格律要求的诗歌创作：</p>
             <ul style="margin-left: 20px; margin-top: 10px;">
                 <li><strong>诗体</strong>：绝句、律诗</li>
                 <li><strong>字数</strong>：五言、七言</li>
@@ -409,7 +409,7 @@ print(response)</code></pre>
 
         <section>
             <h2>技术细节</h2>
-            <p>Yayun-R1 基于以下技术创新：</p>
+            <p>Xunzi-Yayun-R1 基于以下技术创新：</p>
             <div class="features">
                 <div class="feature-card">
                     <h3>GRPO强化学习</h3>
@@ -433,7 +433,7 @@ print(response)</code></pre>
         <section>
             <h2>评估结果</h2>
             <h3>详细评测</h3>
-            <p>下表展示了Yayun-R1与其他模型在唐诗生成任务上的详细对比评测结果：</p>
+            <p>下表展示了Xunzi-Yayun-R1与其他模型在唐诗生成任务上的详细对比评测结果：</p>
             <div class="table-container">
                 <table>
                     <thead>
@@ -452,7 +452,7 @@ print(response)</code></pre>
                         <tr class="highlight-row">
                             <td>推理模型+RAG</td>
                             <td>冷启动</td>
-                            <td><strong>Yayun-R1</strong></td>
+                            <td><strong>Xunzi-Yayun-R1</strong></td>
                             <td>75.63</td>
                             <td><strong>91.23</strong></td>
                             <td>94.20</td>
@@ -502,7 +502,7 @@ print(response)</code></pre>
                         <tr>
                             <td>推理模型</td>
                             <td>冷启动</td>
-                            <td>Yayun-R1</td>
+                            <td>Xunzi-Yayun-R1</td>
                             <td>77.74</td>
                             <td>77.36</td>
                             <td>94.85</td>
@@ -579,7 +579,7 @@ print(response)</code></pre>
             <h2>联系方式</h2>
             <p>如有任何问题，请通过以下方式联系我们：</p>
             <div class="contact-links">
-                <a href="https://github.com/Xunzi-LLM-of-Chinese-classics/Yayun-R1/issues" class="contact-link">GitHub Issues</a>
+                <a href="https://github.com/Xunzi-LLM-of-Chinese-classics/Xunzi-Yayun-R1/issues" class="contact-link">GitHub Issues</a>
                 <a href="mailto:zhaowenhua@njau.edu.cn" class="contact-link">📧 邮箱联系</a>
             </div>
         </section>
